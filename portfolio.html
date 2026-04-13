@@ -1,0 +1,243 @@
+﻿<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>سابقة الأعمال | شركة تاي-إن</title>
+    <link rel="shortcut icon" href="./images/logo1.jpg" type="image/jpeg" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body class="portfolio-page" data-page-title="portfolio.title">
+    <div id="main">
+      <nav>
+        <div class="container nav_container">
+          <a href="index.html" class="nav_logo">
+            <img src="images/logo-header.svg" alt="تاي-إن" class="logo_img" />
+            <h4 data-i18n="brand.name">تاي-إن</h4>
+          </a>
+          <ul class="nav_menu">
+            <li><a href="index.html" data-i18n="nav.home">الرئيسية</a></li>
+            <li><a href="ourwork.html" data-i18n="nav.works">أعمالنا</a></li>
+            <li><a href="contact.html" data-i18n="nav.contact">تواصل معنا</a></li>
+          </ul>
+          <button id="lang-toggle" class="lang-toggle" type="button" aria-label="تبديل اللغة">EN</button>
+          <button id="open-menu-btn" title="hamburger">
+            <i class="ri-menu-line"></i>
+          </button>
+          <button id="close-menu-btn" title="hamburger">
+            <i class="ri-close-large-line"></i>
+          </button>
+        </div>
+      </nav>
+
+      <section class="page-hero">
+        <div class="container page-hero_container">
+          <p class="page-hero_kicker" data-i18n="portfolio.heroKicker">مشاريعنا</p>
+          <h1 data-i18n="portfolio.heroTitle">سابقة أعمال الشركة</h1>
+          <p data-i18n="portfolio.heroText">
+            معرض مختار من مشاريعنا المنفذة في المقاولات والتوريدات وفق معايير جودة وسلامة عالية.
+          </p>
+        </div>
+      </section>
+
+      <section class="portfolio-gallery-section">
+        <div class="container portfolio-slider-shell">
+          <div class="swiper portfolioSwiper">
+            <div class="swiper-wrapper" id="portfolio-swiper-wrapper"></div>
+            <div id="portfolio-swiper-prev" class="portfolio-swiper-prev swiper-button-prev" aria-label="Previous image"></div>
+            <div id="portfolio-swiper-next" class="portfolio-swiper-next swiper-button-next" aria-label="Next image"></div>
+            <div class="portfolio-swiper-pagination swiper-pagination"></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="end-page-action">
+        <div class="container">
+          <a href="index.html#services-section" class="btn btn-primary" data-i18n="portfolio.backHome">العودة إلى الرئيسية</a>
+        </div>
+      </section>
+
+      <footer>
+        <div class="container footer_container">
+          <div class="footer_1">
+            <a href="index.html" class="footer_logo"><h4 data-i18n="brand.name">تاي-إن</h4></a>
+            <p data-i18n="footer.companyText">
+              شركتنا تقدم خدمات متكاملة في المقاولات والتوريدات بمعايير جودة وسلامة عالية.
+            </p>
+          </div>
+          <div class="footer_2">
+            <h4 data-i18n="footer.quickLinks">روابط سريعة</h4>
+            <ul class="permalinks">
+              <li><a href="index.html" data-i18n="nav.home">الرئيسية</a></li>
+              <li><a href="ourwork.html" data-i18n="nav.works">أعمالنا</a></li>
+              <li><a href="contact.html" data-i18n="nav.contact">تواصل معنا</a></li>
+            </ul>
+          </div>
+          <div class="footer_4">
+            <h4 data-i18n="footer.contact">تواصل معنا</h4>
+            <div>
+              <p>+01 234 567 8910</p>
+              <p>tech.niko.coding@gmail.com</p>
+            </div>
+          </div>
+        </div>
+        <div class="footer_copyright">
+          <small data-i18n="footer.copyright">جميع الحقوق محفوظة &copy; شركة تاي-إن</small>
+        </div>
+      </footer>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="main.js"></script>
+    <script>
+      var portfolioImages = [
+        '860b6a2e-5da3-405f-9379-cea1545052bc.jpeg',
+        '8b1b6743-0f88-45fb-a498-631e43b76687 (3).jpeg',
+        'WhatsApp Image 2025-04-06 at 1.02.04 PM (1).jpeg',
+        'WhatsApp Image 2025-04-06 at 1.02.04 PM.jpeg',
+        'WhatsApp Image 2025-04-06 at 1.02.06 PM (1).jpeg',
+        'WhatsApp Image 2025-04-06 at 1.02.06 PM.jpeg',
+        'WhatsApp Image 2025-04-06 at 1.02.07 PM (1).jpeg',
+        'WhatsApp Image 2025-04-06 at 1.02.07 PM.jpeg',
+        'WhatsApp Image 2025-04-06 at 1.02.08 PM (1).jpeg',
+        'WhatsApp Image 2025-04-06 at 1.02.08 PM (2).jpeg',
+        'WhatsApp Image 2025-04-06 at 1.02.08 PM (3).jpeg',
+        'WhatsApp Image 2025-04-06 at 1.02.09 PM (1).jpeg',
+        'WhatsApp Image 2025-04-06 at 1.02.09 PM (2).jpeg',
+        'WhatsApp Image 2025-04-06 at 1.02.09 PM (3).jpeg',
+        'WhatsApp Image 2025-04-06 at 1.02.09 PM.jpeg',
+        'WhatsApp Image 2025-04-06 at 1.02.10 PM (1) (1).jpeg',
+        'WhatsApp Image 2025-04-06 at 1.02.10 PM (2).jpeg',
+        'WhatsApp Image 2025-04-06 at 1.02.10 PM (3).jpeg',
+        'WhatsApp Image 2025-04-06 at 1.07.07 PM.jpeg',
+        'WhatsApp Image 2025-04-06 at 1.07.08 PM (1).jpeg',
+        'WhatsApp Image 2025-04-06 at 1.07.08 PM.jpeg',
+        'WhatsApp Image 2025-04-06 at 1.07.10 PM.jpeg',
+        'WhatsApp Image 2025-04-06 at 1.07.12 PM (1) (1).jpeg',
+        'WhatsApp Image 2025-04-06 at 1.07.12 PM (1) (2).jpeg',
+        'WhatsApp Image 2025-04-06 at 1.07.12 PM (1).jpeg',
+        'WhatsApp Image 2025-04-06 at 1.07.12 PM (2).jpeg',
+        'WhatsApp Image 2025-04-06 at 1.07.12 PM (3).jpeg',
+        'WhatsApp Image 2025-04-06 at 1.07.12 PM.jpeg',
+        'WhatsApp Image 2025-04-06 at 1.08.54 PM.jpeg',
+        'WhatsApp Image 2025-04-06 at 1.12.07 PM.jpeg',
+        'WhatsApp Image 2025-04-06 at 1.12.09 PM (1).jpeg',
+        'WhatsApp Image 2025-04-06 at 1.12.09 PM.jpeg',
+        'WhatsApp Image 2025-04-06 at 1.12.10 PM (1).jpeg',
+        'WhatsApp Image 2025-04-06 at 1.12.10 PM (2).jpeg',
+        'WhatsApp Image 2025-04-06 at 1.12.10 PM (3).jpeg',
+        'WhatsApp Image 2025-04-06 at 1.12.10 PM (4).jpeg',
+        'WhatsApp Image 2025-04-06 at 1.12.10 PM.jpeg',
+        'WhatsApp Image 2025-04-06 at 1.12.11 PM (1).jpeg',
+        'WhatsApp Image 2025-04-06 at 1.12.11 PM (2).jpeg',
+        'WhatsApp Image 2025-04-06 at 1.12.11 PM (3).jpeg',
+        'WhatsApp Image 2025-04-06 at 1.12.11 PM (4).jpeg',
+        'WhatsApp Image 2025-04-06 at 1.12.11 PM.jpeg',
+        'WhatsApp Image 2025-04-06 at 1.12.12 PM.jpeg',
+        'WhatsApp Image 2025-04-06 at 1.14.40 PM.jpeg',
+        'WhatsApp Image 2025-04-06 at 1.14.41 PM (1).jpeg',
+        'WhatsApp Image 2025-04-06 at 1.14.41 PM.jpeg',
+        'WhatsApp Image 2025-04-06 at 12.50.50 PM.jpeg',
+        'WhatsApp Image 2025-04-06 at 12.51.26 PM (1).jpeg',
+        'WhatsApp Image 2025-04-06 at 12.51.26 PM (2).jpeg',
+        'WhatsApp Image 2025-04-06 at 12.51.26 PM.jpeg',
+        'WhatsApp Image 2025-04-06 at 12.51.27 PM (1).jpeg',
+        'WhatsApp Image 2025-04-06 at 12.51.27 PM (2).jpeg',
+        'WhatsApp Image 2025-04-06 at 12.51.27 PM.jpeg',
+        'WhatsApp Image 2025-04-06 at 12.52.02 PM.jpeg',
+        'WhatsApp Image 2025-04-06 at 12.52.03 PM (1).jpeg',
+        'WhatsApp Image 2025-04-06 at 12.52.03 PM (2).jpeg',
+        'WhatsApp Image 2025-04-06 at 12.52.03 PM (3).jpeg',
+        'WhatsApp Image 2025-04-06 at 12.52.03 PM.jpeg',
+        'WhatsApp Image 2025-04-06 at 12.56.14 PM.jpeg',
+        'WhatsApp Image 2025-04-06 at 12.56.15 PM (1) (4).jpeg',
+        'WhatsApp Image 2025-04-06 at 12.56.15 PM (4) (3).jpeg',
+        'WhatsApp Image 2025-04-06 at 12.56.15 PM (6).jpeg',
+        'WhatsApp Image 2025-04-06 at 12.56.15 PM (7).jpeg',
+        'WhatsApp Image 2025-04-06 at 12.57.03 PM (1).jpeg',
+        'WhatsApp Image 2025-04-06 at 12.57.03 PM (2).jpeg',
+        'WhatsApp Image 2025-04-06 at 12.57.03 PM.jpeg',
+        'WhatsApp Image 2025-04-06 at 12.57.04 PM (1).jpeg',
+        'WhatsApp Image 2025-04-06 at 12.57.04 PM.jpeg'
+      ];
+
+      var portfolioWrapper = document.getElementById('portfolio-swiper-wrapper');
+      var portfolioBasePath = 'images/سابقه الاعمال/';
+
+      if (portfolioWrapper) {
+        portfolioImages.forEach(function (fileName) {
+          var slide = document.createElement('div');
+          slide.className = 'swiper-slide';
+
+          var card = document.createElement('article');
+          card.className = 'portfolio-slide-card';
+
+          var image = document.createElement('img');
+          image.src = encodeURI(portfolioBasePath + fileName);
+          image.alt = 'سابقة أعمال الشركة';
+          image.loading = 'lazy';
+
+          var overlay = document.createElement('div');
+          overlay.className = 'portfolio-slide-overlay';
+
+          card.appendChild(image);
+          card.appendChild(overlay);
+          slide.appendChild(card);
+          portfolioWrapper.appendChild(slide);
+        });
+      }
+
+      var portfolioSwiper = new Swiper('.portfolioSwiper', {
+        slidesPerView: 1,
+        spaceBetween: 24,
+        loop: false,
+        speed: 700,
+        centeredSlides: true,
+        autoplay: {
+          delay: 3200,
+          disableOnInteraction: false,
+        },
+        navigation: {
+          nextEl: '.portfolio-swiper-next',
+          prevEl: '.portfolio-swiper-prev',
+        },
+        pagination: {
+          el: '.portfolio-swiper-pagination',
+          clickable: true,
+        },
+        breakpoints: {
+          700: {
+            slidesPerView: 1.2,
+          },
+          1024: {
+            slidesPerView: 1.45,
+          },
+        },
+      });
+
+      var portfolioNext = document.getElementById('portfolio-swiper-next');
+      var portfolioPrev = document.getElementById('portfolio-swiper-prev');
+
+      if (portfolioNext) {
+        portfolioNext.addEventListener('click', function () {
+          portfolioSwiper.slideNext();
+        });
+      }
+
+      if (portfolioPrev) {
+        portfolioPrev.addEventListener('click', function () {
+          portfolioSwiper.slidePrev();
+        });
+      }
+    </script>
+  </body>
+</html>
+

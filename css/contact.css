@@ -1,0 +1,456 @@
+.contact_container {
+  background: var(--color-bg1);
+  padding: 4rem;
+  display: grid;
+  grid-template-columns: 40% 60%;
+  gap: 4rem;
+  min-height: 30rem;
+  margin: 4rem auto;
+  border-radius: 1rem;
+  box-shadow: var(--shadow-md);
+}
+.contact {
+  min-height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.contact_aside {
+  background: var(--color-primary);
+  padding: 3rem;
+  border-radius: 1rem;
+  border: 1px solid var(--border-soft);
+}
+.aside_image {
+  width: 18rem;
+  margin-bottom: 2rem;
+}
+.contact_aside h2 {
+  text-align: right;
+  margin-bottom: 1rem;
+}
+.contact_aside p {
+  font-size: 0.9rem;
+  margin-bottom: 2rem;
+}
+.contact_details li {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+  flex-direction: column;
+}
+
+.contact_details li i {
+  color: var(--color-danger);
+  font-size: 1.2rem;
+  flex-shrink: 0;
+}
+
+.contact_details li h5 {
+  margin: 0;
+  text-align: right;
+}
+.contact_socials {
+  display: flex;
+  gap: 0.8rem;
+  margin-top: 3rem;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+}
+
+.contact_socials a {
+  background: var(--color-bg2);
+  padding: 0.5rem 0.6rem;
+  border-radius: 50%;
+  font-size: 0.9rem;
+  transition: var(--transition);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--brand-primary-strong);
+}
+.contact_socials a:hover {
+  background: var(--brand-secondary-soft);
+  color: var(--brand-secondary-strong);
+}
+.contact_form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  margin-inline-start: 2rem;
+}
+.form_name {
+  display: flex;
+  gap: 1.2rem;
+}
+.contact_form input[type="text"] {
+  width: 50%;
+}
+input,
+textarea {
+  width: 100%;
+  padding: 1rem;
+  background: var(--color-bg);
+  color: var(--color-white);
+  border: 1px solid var(--border-soft);
+  border-radius: 0.75rem;
+  resize: none;
+}
+.contact_form .btn {
+  width: max-content;
+  margin-top: 1rem;
+  cursor: pointer;
+}
+
+.form-message {
+  padding: 1rem;
+  border-radius: 0.5rem;
+  text-align: center;
+  font-weight: 600;
+  margin-top: 1rem;
+  display: none;
+}
+
+.form-message.success {
+  background: rgba(44, 159, 149, 0.14);
+  color: var(--color-success);
+  border: 1px solid var(--color-success);
+  display: block;
+}
+
+.form-message.error {
+  background: rgba(231, 139, 60, 0.14);
+  color: var(--brand-accent-hover);
+  border: 1px solid rgba(207, 125, 46, 0.45);
+  display: block;
+}
+
+.form-debug {
+  display: none;
+  margin-top: 0.6rem;
+  color: var(--color-light);
+  font-size: 0.82rem;
+  line-height: 1.4;
+  direction: ltr;
+  text-align: left;
+  word-break: break-word;
+}
+
+/* Working Hours Section */
+.working-hours {
+  padding: 4rem 0;
+  background: linear-gradient(135deg, rgba(31, 95, 156, 0.1), rgba(243, 165, 90, 0.14));
+}
+
+.working-hours-container {
+  text-align: center;
+}
+
+.hours-content h2 {
+  color: var(--color-white);
+  margin-bottom: 1rem;
+  font-size: 2.2rem;
+}
+
+.hours-content > p {
+  color: var(--color-light);
+  margin-bottom: 3rem;
+  font-size: 1.1rem;
+}
+
+.hours-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: clamp(1rem, 2.5vw, 2rem);
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.hour-item {
+  background: var(--surface-elevated);
+  padding: 2rem;
+  border-radius: 1rem;
+  border: 1px solid var(--border-soft);
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hour-item:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-md);
+}
+
+.hour-item h4 {
+  color: var(--color-danger);
+  margin-bottom: 0.8rem;
+  font-size: 1.2rem;
+}
+
+.hour-item .time {
+  color: var(--color-light);
+  font-size: 1.1rem;
+  font-weight: 600;
+  direction: ltr;
+  unicode-bidi: isolate;
+  display: inline-block;
+}
+
+/* Executives Section */
+.executives-section {
+  padding: 4rem 0;
+  background: linear-gradient(180deg, #f3f8fc 0%, #ffffff 100%);
+}
+
+.executives-container {
+  text-align: center;
+}
+
+.executives-container h2 {
+  color: var(--color-white);
+  margin-bottom: 3rem;
+  font-size: 2.2rem;
+}
+
+.executives-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.executive-card {
+  background: var(--surface-elevated);
+  padding: 2.5rem;
+  border-radius: 1.5rem;
+  border: 1px solid var(--border-soft);
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.executive-card:hover {
+  transform: translateY(-8px);
+  border-color: rgba(31, 95, 156, 0.28);
+  box-shadow: var(--shadow-md);
+}
+
+.executive-icon {
+  width: 70px;
+  height: 70px;
+  background: linear-gradient(135deg, rgba(31, 95, 156, 0.15), rgba(243, 165, 90, 0.18));
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.5rem;
+  font-size: 2rem;
+  color: var(--color-danger);
+}
+
+.executive-card h3 {
+  color: var(--color-white);
+  margin-bottom: 0.5rem;
+  font-size: 1.3rem;
+}
+
+.executive-card .title {
+  color: var(--color-light);
+  font-size: 0.9rem;
+  margin-bottom: 1.5rem;
+}
+
+.phone-info {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
+  margin-top: 1.5rem;
+  flex-direction: row-reverse;
+}
+
+.phone-info i {
+  color: var(--color-danger);
+  font-size: 1.1rem;
+  flex-shrink: 0;
+}
+
+.phone-info a {
+  color: var(--brand-primary-strong);
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  direction: ltr;
+  unicode-bidi: embed;
+}
+
+.phone-info a:hover {
+  color: var(--brand-secondary-strong);
+  text-decoration: underline;
+}
+
+html[dir="ltr"] .contact_aside h2,
+html[dir="ltr"] .contact_aside p,
+html[dir="ltr"] .contact_details li h5 {
+  text-align: left;
+}
+
+html[dir="ltr"] .contact_details li,
+html[dir="ltr"] .phone-info {
+  flex-direction: row;
+}
+
+html[dir="ltr"] .contact_socials {
+  justify-content: flex-start;
+}
+
+html[dir="ltr"] .contact_form {
+  margin-inline-start: 0;
+  margin-inline-end: 2rem;
+}
+
+/* WhatsApp Section */
+.whatsapp-section {
+  padding: 4rem 0;
+  background: linear-gradient(135deg, rgba(31, 95, 156, 0.12), rgba(243, 165, 90, 0.16));
+}
+
+.whatsapp-container {
+  text-align: center;
+}
+
+.whatsapp-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.whatsapp-icon {
+  width: 100px;
+  height: 100px;
+  background: linear-gradient(135deg, var(--brand-primary), var(--brand-primary-strong));
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+  color: white;
+  box-shadow: 0 10px 30px rgba(228, 148, 70, 0.32);
+}
+
+.whatsapp-content h2 {
+  color: var(--color-white);
+  font-size: 2rem;
+  margin: 0;
+}
+
+.whatsapp-content > p {
+  color: var(--color-light);
+  font-size: 1.05rem;
+  margin: 0;
+}
+
+.whatsapp-content .btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.8rem;
+  margin-top: 1rem;
+}
+
+.whatsapp-content .btn i {
+  font-size: 1.2rem;
+}
+
+@media screen and (max-width: 1024px) {
+  .contact {
+    padding-bottom: 0;
+  }
+  .contact_container {
+    gap: 1.5rem;
+    margin-top: 3rem;
+    height: auto;
+    padding: 1.5rem;
+  }
+  .contact_aside {
+    width: auto;
+    padding: 1.5rem;
+  }
+  .contact_form {
+    align-self: center;
+    margin-inline-start: 1.5rem;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .contact_container {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    margin-top: 0;
+    padding: 0;
+  }
+  .contact {
+    display: block;
+    height: auto;
+  }
+  .contact_form {
+    margin: 0 1.5rem 3rem;
+  }
+  .form_name {
+    flex-direction: column;
+  }
+  .form_name input[type="text"] {
+    width: 100%;
+  }
+
+  .hours-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .hours-content h2 {
+    font-size: 1.8rem;
+  }
+
+  .working-hours {
+    padding: 2rem 0;
+  }
+
+  .executives-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .executives-container h2 {
+    font-size: 1.8rem;
+  }
+
+  .executives-section {
+    padding: 2rem 0;
+  }
+
+  .executive-card {
+    padding: 2rem;
+  }
+
+  .whatsapp-section {
+    padding: 2rem 0;
+  }
+
+  .whatsapp-icon {
+    width: 80px;
+    height: 80px;
+    font-size: 2.5rem;
+  }
+
+  .whatsapp-content h2 {
+    font-size: 1.6rem;
+  }
+
+  .whatsapp-content > p {
+    font-size: 0.95rem;
+  }
+}

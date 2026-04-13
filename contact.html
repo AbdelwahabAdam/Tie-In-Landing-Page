@@ -1,0 +1,353 @@
+﻿<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>تواصل معنا | شركة تاي-إن</title>
+    <link rel="shortcut icon" href="./images/logo1.jpg" type="image/jpeg" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/contact.css" />
+  </head>
+  <body data-page-title="contact.title">
+    <div id="main">
+      <nav>
+        <div class="container nav_container">
+          <a href="index.html" class="nav_logo">
+            <img src="images/logo-header.svg" alt="تاي-إن" class="logo_img" />
+            <h4 data-i18n="brand.name">تاي-إن</h4>
+          </a>
+          <ul class="nav_menu">
+            <li><a href="index.html" data-i18n="nav.home">الرئيسية</a></li>
+            <li><a href="ourwork.html" data-i18n="nav.works">أعمالنا</a></li>
+            <li><a href="contact.html" data-i18n="nav.contact">تواصل معنا</a></li>
+          </ul>
+          <button id="lang-toggle" class="lang-toggle" type="button" aria-label="تبديل اللغة">EN</button>
+          <button id="open-menu-btn" title="hamburger">
+            <i class="ri-menu-line"></i>
+          </button>
+          <button id="close-menu-btn" title="hamburger">
+            <i class="ri-close-large-line"></i>
+          </button>
+        </div>
+      </nav>
+
+      <!-- End of navbar -->
+
+      <section class="page-hero">
+        <div class="container page-hero_container">
+          <p class="page-hero_kicker" data-i18n="contact.heroKicker">تواصل معنا</p>
+          <h1 data-i18n="contact.heroTitle">جاهزون للرد على استفساراتك</h1>
+          <p data-i18n="contact.heroText">
+            يمكنك التواصل مع فريقنا في أي وقت للحصول على دعم سريع ومعلومات تفصيلية عن خدماتنا.
+          </p>
+        </div>
+      </section>
+
+      <section class="contact">
+        <div class="container contact_container">
+          <aside class="contact_aside">
+            <div class="aside_image">
+              <img src="./images/contact.svg" alt="" />
+            </div>
+            <h2 data-i18n="contact.asideTitle">تواصل معنا</h2>
+            <p data-i18n="contact.asideText">
+            والأفضل من ذلك، رؤيتنا شخصيا!
+            </p>
+            <ul class="contact_details">
+              <li>
+                <i class="ri-phone-line"></i>
+                <h5 dir="ltr">01070069022</h5>
+              </li>
+              <li>
+                <i class="ri-mail-line"></i>
+                <h5 dir="ltr">tiein@egytiein.com</h5>
+                <h5 dir="ltr">m.egytiein@gmail.com</h5>
+              </li>
+              <li>
+                <i class="ri-map-pin-user-line"></i>
+                <h5>الإسكندرية، مصر</h5>
+              </li>
+            </ul>
+          
+          </aside>
+
+          <form id="contactForm" class="contact_form">
+            <div class="form_name">
+              <input
+                type="text"
+                id="firstName"
+                placeholder="الاسم الأول"
+                data-i18n-placeholder="contact.firstName"
+                required
+              />
+              <input
+                type="text"
+                id="lastName"
+                placeholder="اسم العائلة"
+                data-i18n-placeholder="contact.lastName"
+                required
+              />
+            </div>
+            <input
+              type="email"
+              id="email"
+              placeholder="البريد الإلكتروني"
+              data-i18n-placeholder="contact.email"
+              required
+            />
+            <textarea
+              id="message"
+              placeholder="اكتب رسالتك هنا"
+              data-i18n-placeholder="contact.message"
+              rows="7"
+              required
+            ></textarea>
+            <button type="submit" class="btn btn-primary" data-i18n="contact.send">إرسال الرسالة</button>
+            <div id="formMessage" class="form-message"></div>
+            <small id="formDebug" class="form-debug" aria-live="polite"></small>
+          </form>
+        </div>
+      </section>
+
+      <section class="executives-section">
+        <div class="container executives-container">
+          <h2 data-i18n="contact.executives">الإدارة التنفيذية</h2>
+          <div class="executives-grid">
+            <div class="executive-card">
+              <div class="executive-icon">
+                <i class="ri-user-3-line"></i>
+              </div>
+              <h3 data-i18n="contact.exec1.title">المدير التنفيذي</h3>
+              <p class="title" data-i18n="contact.exec1.role">Executive Director</p>
+              <div class="phone-info">
+                <i class="ri-phone-line"></i>
+                <a href="tel:+201001234567" dir="ltr">01070069022</a>
+              </div>
+            </div>
+
+            <div class="executive-card">
+              <div class="executive-icon">
+                <i class="ri-user-star-line"></i>
+              </div>
+              <h3 data-i18n="contact.exec2.title">المدير العام</h3>
+              <p class="title" data-i18n="contact.exec2.role">General Manager</p>
+              <div class="phone-info">
+                <i class="ri-phone-line"></i>
+                <a href="tel:+201001234568" dir="ltr">01070069011</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="whatsapp-section">
+        <div class="container whatsapp-container">
+          <div class="whatsapp-content">
+            <div class="whatsapp-icon">
+              <i class="ri-whatsapp-line"></i>
+            </div>
+            <h2 data-i18n="contact.whatsappTitle">تواصل معنا عبر WhatsApp</h2>
+            <p data-i18n="contact.whatsappText">لا تتردد في التواصل معنا مباشرة عبر الواتس آب للحصول على إجابات سريعة</p>
+            <a href="https://wa.me/201001234567?text=Hello%20I%20would%20like%20to%20know%20more%20about%20your%20services" target="_blank" class="btn btn-primary">
+              <i class="ri-whatsapp-line"></i>
+              <span data-i18n="contact.whatsappBtn">افتح WhatsApp</span>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section class="working-hours">
+        <div class="container working-hours-container">
+          <div class="hours-content">
+            <h2 data-i18n="contact.hoursTitle">ساعات العمل</h2>
+            <p data-i18n="contact.hoursText">نحن هنا لخدمتك خلال ساعات العمل التالية</p>
+            <div class="hours-grid">
+              <div class="hour-item">
+                <h4 data-i18n="contact.hours.days1">الأحد - الخميس</h4>
+                <p class="time" dir="ltr">09:00 AM - 05:00 PM</p>
+              </div>
+              
+              <div class="hour-item">
+                <h4 data-i18n="contact.hours.days3">الجمعة</h4>
+                <p class="time" data-i18n="contact.hours.closed">مغلق</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <footer>
+        <div class="container footer_container">
+          <div class="footer_1">
+            <a href="index.html" class="footer_logo"><h4 data-i18n="brand.name">تاي-إن</h4></a>
+            <p data-i18n="footer.companyText">
+              شركتنا تقدم خدمات متكاملة في المقاولات والتوريدات بمعايير جودة وسلامة عالية.
+            </p>
+          </div>
+          <div class="footer_2">
+            <h4 data-i18n="footer.quickLinks">روابط سريعة</h4>
+            <ul class="permalinks">
+              <li><a href="index.html" data-i18n="nav.home">الرئيسية</a></li>
+              <li><a href="ourwork.html" data-i18n="nav.works">أعمالنا</a></li>
+              <li><a href="contact.html" data-i18n="nav.contact">تواصل معنا</a></li>
+            </ul>
+          </div>
+          <div class="footer_4">
+            <h4 data-i18n="footer.contact">تواصل معنا</h4>
+            <div>
+              <p>01070069011</p>
+              <p>tiein@egytiein.com</p>
+            </div>
+          </div>
+        </div>
+        <div class="footer_copyright">
+          <small data-i18n="footer.copyright">جميع الحقوق محفوظة &copy; شركة تاي-إن</small>
+        </div>
+      </footer>
+
+      <!-- end of footer  -->
+    </div>
+    <script>
+      const CONTACT_CONFIG = {
+        formspreeEndpoint: 'https://formspree.io/f/mvoejndy'
+      };
+
+      const DEBUG_MODE =
+        window.location.hostname === 'localhost' ||
+        window.location.hostname === '127.0.0.1';
+
+      const contactForm = document.getElementById('contactForm');
+      const submitButton = contactForm.querySelector('button[type="submit"]');
+      const formMessage = document.getElementById('formMessage');
+      const formDebug = document.getElementById('formDebug');
+
+      function t(key) {
+        if (typeof window.getI18nText === 'function') {
+          return window.getI18nText(key);
+        }
+        return key;
+      }
+
+      setDebug('');
+
+      contactForm.addEventListener('submit', async function (e) {
+        e.preventDefault();
+
+        const firstName = document.getElementById('firstName').value.trim();
+        const lastName = document.getElementById('lastName').value.trim();
+        const email = document.getElementById('email').value.trim();
+        const message = document.getElementById('message').value.trim();
+
+        if (!firstName || !lastName || !email || !message) {
+          setStatus(t('contact.required'), 'error');
+          return;
+        }
+
+        if (!isValidEmail(email)) {
+          setStatus(t('contact.invalidEmail'), 'error');
+          return;
+        }
+
+        toggleSubmitting(true);
+
+        const payload = {
+          from_name: firstName + ' ' + lastName,
+          from_email: email,
+          message: message,
+          subject: 'رسالة جديدة من نموذج التواصل'
+        };
+
+        try {
+          const formspreeResult = await sendViaFormspree(payload);
+          console.info('Formspree accepted request:', formspreeResult);
+          setStatus(t('contact.success'), 'success');
+          setDebug('Formspree OK: request accepted and queued.');
+          contactForm.reset();
+        } catch (formspreeError) {
+          setStatus(t('contact.error'), 'error');
+          setDebug('Formspree ERROR: ' + (formspreeError && formspreeError.message ? formspreeError.message : 'unknown error'));
+          console.error('Formspree error:', formspreeError);
+        } finally {
+          toggleSubmitting(false);
+          clearStatusLater();
+        }
+      });
+
+      function isValidEmail(value) {
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return emailRegex.test(value);
+      }
+
+      function setStatus(message, type) {
+        formMessage.textContent = message;
+        formMessage.className = 'form-message ' + type;
+      }
+
+      function clearStatusLater() {
+        setTimeout(function () {
+          formMessage.textContent = '';
+          formMessage.className = 'form-message';
+        }, 5000);
+      }
+
+      function toggleSubmitting(isSubmitting) {
+        submitButton.disabled = isSubmitting;
+        submitButton.textContent = isSubmitting ? t('contact.sending') : t('contact.send');
+      }
+
+      window.addEventListener('languageChanged', function () {
+        if (!submitButton.disabled) {
+          submitButton.textContent = t('contact.send');
+        }
+      });
+
+      function setDebug(text) {
+        if (!formDebug) {
+          return;
+        }
+
+        if (!DEBUG_MODE) {
+          formDebug.style.display = 'none';
+          return;
+        }
+
+        formDebug.style.display = 'block';
+        formDebug.textContent = text;
+      }
+
+      async function sendViaFormspree(data) {
+        const response = await fetch(CONTACT_CONFIG.formspreeEndpoint, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            Accept: 'application/json'
+          },
+          body: JSON.stringify({
+            name: data.from_name,
+            email: data.from_email,
+            message: data.message,
+            _replyto: data.from_email,
+            _subject: data.subject
+          })
+        });
+
+        if (!response.ok) {
+          throw new Error('request failed with status ' + response.status);
+        }
+
+        const result = await response.json();
+        if (!result || result.ok !== true) {
+          throw new Error('Formspree response is not OK');
+        }
+
+        return result;
+      }
+    </script>
+    <script src="main.js"></script>
+  </body>
+</html>
+
