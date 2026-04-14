@@ -9,8 +9,8 @@
       href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="css/style.css" />
-    <link rel="stylesheet" href="css/contact.css" />
+    <link rel="stylesheet" href="css/style.css?v=1.0" />
+    <link rel="stylesheet" href="css/contact.css?v=1.0" />
   </head>
   <body data-page-title="contact.title">
     <div id="main">
@@ -75,11 +75,12 @@
           
           </aside>
 
-          <form id="contactForm" class="contact_form">
+          <form id="contact-form" class="contact_form" action="https://formspree.io/f/mvoejndy" method="POST">
             <div class="form_name">
               <input
                 type="text"
                 id="firstName"
+                name="first_name"
                 placeholder="الاسم الأول"
                 data-i18n-placeholder="contact.firstName"
                 required
@@ -87,6 +88,7 @@
               <input
                 type="text"
                 id="lastName"
+                name="last_name"
                 placeholder="اسم العائلة"
                 data-i18n-placeholder="contact.lastName"
                 required
@@ -95,12 +97,14 @@
             <input
               type="email"
               id="email"
+              name="email"
               placeholder="البريد الإلكتروني"
               data-i18n-placeholder="contact.email"
               required
             />
             <textarea
               id="message"
+              name="message"
               placeholder="اكتب رسالتك هنا"
               data-i18n-placeholder="contact.message"
               rows="7"
@@ -122,7 +126,7 @@
                 <i class="ri-user-3-line"></i>
               </div>
               <h3 data-i18n="contact.exec1.title">المدير التنفيذي</h3>
-              <p class="title" data-i18n="contact.exec1.role">Executive Director</p>
+              <p class="title" data-i18n="contact.exec1.role">المدير التنفيذي</p>
               <div class="phone-info">
                 <i class="ri-phone-line"></i>
                 <a href="tel:+201001234567" dir="ltr">01070069022</a>
@@ -134,7 +138,7 @@
                 <i class="ri-user-star-line"></i>
               </div>
               <h3 data-i18n="contact.exec2.title">المدير العام</h3>
-              <p class="title" data-i18n="contact.exec2.role">General Manager</p>
+              <p class="title" data-i18n="contact.exec2.role">المدير العام</p>
               <div class="phone-info">
                 <i class="ri-phone-line"></i>
                 <a href="tel:+201001234568" dir="ltr">01070069011</a>
@@ -167,7 +171,7 @@
             <p data-i18n="contact.hoursText">نحن هنا لخدمتك خلال ساعات العمل التالية</p>
             <div class="hours-grid">
               <div class="hour-item">
-                <h4 data-i18n="contact.hours.days1">الأحد - الخميس</h4>
+                <h4 data-i18n="contact.hours.days1">السبت - الخميس</h4>
                 <p class="time" dir="ltr">09:00 AM - 05:00 PM</p>
               </div>
               
@@ -199,7 +203,7 @@
           <div class="footer_4">
             <h4 data-i18n="footer.contact">تواصل معنا</h4>
             <div>
-              <p>01070069011</p>
+              <p dir="ltr">01070069011</p>
               <p>tiein@egytiein.com</p>
             </div>
           </div>
@@ -213,15 +217,16 @@
     </div>
     <script>
       const CONTACT_CONFIG = {
-        formspreeEndpoint: 'https://formspree.io/f/mvoejndy'
+        receiverEmail: 'tiein@egytiein.com',
+        gmailComposeBase: 'https://mail.google.com/mail/?view=cm&fs=1'
       };
 
       const DEBUG_MODE =
         window.location.hostname === 'localhost' ||
         window.location.hostname === '127.0.0.1';
 
-      const contactForm = document.getElementById('contactForm');
-      const submitButton = contactForm.querySelector('button[type="submit"]');
+      const contactForm = document.getElementById('contact-form') || document.getElementById('contactForm');
+      const submitButton = contactForm ? contactForm.querySelector('button[type="submit"]') : null;
       const formMessage = document.getElementById('formMessage');
       const formDebug = document.getElementById('formDebug');
 
@@ -234,7 +239,8 @@
 
       setDebug('');
 
-      contactForm.addEventListener('submit', async function (e) {
+      if (contactForm && submitButton) {
+        contactForm.addEventListener('submit', async function (e) {
         e.preventDefault();
 
         const firstName = document.getElementById('firstName').value.trim();
@@ -256,26 +262,38 @@
 
         const payload = {
           from_name: firstName + ' ' + lastName,
+          first_name: firstName,
+          last_name: lastName,
           from_email: email,
           message: message,
-          subject: 'رسالة جديدة من نموذج التواصل'
+          subject: [firstName, lastName].filter(Boolean).join(' ').trim()
         };
 
+        console.info('Contact form mailto started', {
+          receiverEmail: CONTACT_CONFIG.receiverEmail,
+          payloadPreview: {
+            subject: payload.subject,
+            from_email: payload.from_email,
+            has_message: Boolean(payload.message)
+          }
+        });
+
         try {
-          const formspreeResult = await sendViaFormspree(payload);
-          console.info('Formspree accepted request:', formspreeResult);
-          setStatus(t('contact.success'), 'success');
-          setDebug('Formspree OK: request accepted and queued.');
+          openMailClient(payload);
+          console.info('Mailto link opened successfully');
+          setStatus(t('contact.mailtoOpened'), 'success');
+          setDebug('Mailto OK: default email client should open.');
           contactForm.reset();
-        } catch (formspreeError) {
+        } catch (mailError) {
           setStatus(t('contact.error'), 'error');
-          setDebug('Formspree ERROR: ' + (formspreeError && formspreeError.message ? formspreeError.message : 'unknown error'));
-          console.error('Formspree error:', formspreeError);
+          setDebug('Mailto ERROR: ' + (mailError && mailError.message ? mailError.message : 'unknown error'));
+          console.error('Mailto error:', mailError);
         } finally {
           toggleSubmitting(false);
           clearStatusLater();
         }
-      });
+        });
+      }
 
       function isValidEmail(value) {
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -295,12 +313,15 @@
       }
 
       function toggleSubmitting(isSubmitting) {
+        if (!submitButton) {
+          return;
+        }
         submitButton.disabled = isSubmitting;
         submitButton.textContent = isSubmitting ? t('contact.sending') : t('contact.send');
       }
 
       window.addEventListener('languageChanged', function () {
-        if (!submitButton.disabled) {
+        if (submitButton && !submitButton.disabled) {
           submitButton.textContent = t('contact.send');
         }
       });
@@ -319,35 +340,30 @@
         formDebug.textContent = text;
       }
 
-      async function sendViaFormspree(data) {
-        const response = await fetch(CONTACT_CONFIG.formspreeEndpoint, {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-            Accept: 'application/json'
-          },
-          body: JSON.stringify({
-            name: data.from_name,
-            email: data.from_email,
-            message: data.message,
-            _replyto: data.from_email,
-            _subject: data.subject
-          })
-        });
+      function openMailClient(data) {
+        const subject = encodeURIComponent(data.subject || '');
+        const body = encodeURIComponent(data.message || '');
+        const mailtoLink = `mailto:${CONTACT_CONFIG.receiverEmail}?subject=${subject}&body=${body}`;
+        const gmailComposeLink = `${CONTACT_CONFIG.gmailComposeBase}&to=${encodeURIComponent(CONTACT_CONFIG.receiverEmail)}&su=${subject}&body=${body}`;
 
-        if (!response.ok) {
-          throw new Error('request failed with status ' + response.status);
+        console.log('Generated mailto link:', mailtoLink);
+        console.log('Generated Gmail compose link:', gmailComposeLink);
+
+        const gmailWindow = window.open(gmailComposeLink, '_blank', 'noopener');
+        if (!gmailWindow) {
+          console.warn('window.open(Gmail) returned a falsy value, falling back to mailto');
+
+          const mailWindow = window.open(mailtoLink, '_self');
+          if (!mailWindow) {
+            console.warn('window.open(mailto) returned a falsy value, falling back to location.href');
+            window.location.href = mailtoLink;
+          }
         }
 
-        const result = await response.json();
-        if (!result || result.ok !== true) {
-          throw new Error('Formspree response is not OK');
-        }
-
-        return result;
+        return gmailComposeLink;
       }
     </script>
-    <script src="main.js"></script>
+    <script src="main.js?v=1.0"></script>
   </body>
 </html>
 

@@ -233,7 +233,7 @@ p {
 }
 
 .why-choose-us-section {
-  padding: 6rem 0 7rem;
+  padding: 4rem 0 5rem;
   background:
     radial-gradient(circle at 12% 18%, rgba(28, 167, 160, 0.12), transparent 26%),
     radial-gradient(circle at 85% 82%, rgba(243, 165, 90, 0.14), transparent 24%),
@@ -655,25 +655,25 @@ body {
   letter-spacing: 0.1px;
 }
 #main {
-  background: #ffffff;
+  background: var(--color-bg2);
   border-radius: 24px;
   box-shadow: 0 24px 58px rgba(24, 36, 92, 0.26);
   width: 100%;
-  max-width: 100%;
-  margin: 0;
+  max-width: 1680px;
+  margin: 0 auto;
   overflow-x: clip;
   overflow-y: hidden;
 }
 .container {
-  width: var(--container-width-lg);
+  width: min(var(--container-width-lg), 1280px);
   margin: 0 auto;
 }
 section {
-  padding: var(--space-16) 0;
+  padding: var(--space-12) 0;
 }
 section h2 {
   text-align: center;
-  margin-bottom: 4rem;
+  margin-bottom: 2.5rem;
 }
 h1,
 h2,
@@ -861,7 +861,7 @@ header {
   top: 5rem;
   overflow: hidden;
   height: 90vh;
-  margin-bottom: 10rem;
+  margin-bottom: 6rem;
 }
 .header_container {
   display: grid;
@@ -920,7 +920,7 @@ html[dir="ltr"] .footer_4 {
 
 .page-hero {
   position: relative;
-  margin-top: 5rem;
+  margin-top: 2rem;
   padding: var(--space-16) 0 var(--space-12);
   background:
     radial-gradient(circle at 90% 15%, rgba(31, 95, 156, 0.16), transparent 30%),
@@ -1022,7 +1022,7 @@ html[dir="ltr"] .footer_4 {
 /* courses  */
 
 .courses {
-  margin-top: 10rem;
+  margin-top: 1rem;
 }
 .courses_container {
   display: grid;
@@ -1069,7 +1069,7 @@ html[dir="ltr"] .footer_4 {
 .section-header {
   text-align: center;
   max-width: 720px;
-  margin: 0 auto var(--space-12);
+  margin: 0 auto 2rem;
 }
 
 .section-header h2 {
@@ -1085,14 +1085,14 @@ html[dir="ltr"] .footer_4 {
 .projects-section,
 .services-section {
   position: relative;
-  padding: 7rem 0;
+  padding: 4rem 0;
 }
 
 .projects-section {
-  background: #ffffff;
+  background: var(--color-bg2);
 }
 .services-section {
-  background: #ffffff;
+  background: var(--color-bg2);
 }
 
 
@@ -1182,7 +1182,7 @@ html[dir="ltr"] .footer_4 {
 
 .services-section h2 {
   position: relative;
-  margin-bottom: 4.5rem;
+  margin-bottom: 3rem;
   color: var(--color-white);
   font-family: 'Cairo', sans-serif;
   font-size: clamp(2rem, 3vw, 2.7rem);
@@ -1383,11 +1383,11 @@ border-color: rgba(31, 95, 156, 0.34);
 /* testimonials */
 
 .testimonial_container {
-  background: #ffffff;
+  background: var(--color-bg2);
   overflow-x: hidden;
   position: relative;
-  margin-bottom: 5rem;
-  padding-bottom: 5rem;
+  margin-bottom: 3rem;
+  padding-bottom: 3rem;
 }
 
 .testimonial {
@@ -1856,6 +1856,25 @@ footer ul li a:hover {
   font-size: 0.85rem;
 }
 
+@media screen and (min-width: 1600px) {
+  section {
+    padding: 2.5rem 0;
+  }
+
+  .projects-section,
+  .services-section,
+  .why-choose-us-section,
+  .project-detail-section,
+  .portfolio-gallery-section {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
+
+  .section-header {
+    margin-bottom: 1.75rem;
+  }
+}
+
 /* MEDIA QUERIES FOR TABLET */
 
 @media screen and (max-width: 1024px) {
@@ -1970,7 +1989,7 @@ footer ul li a:hover {
     grid-template-columns: 1fr 1fr;
   }
   .services-section {
-    padding: 5.5rem 0;
+    padding: 4rem 0;
   }
 
   .services-section .courses_container {

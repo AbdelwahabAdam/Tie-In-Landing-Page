@@ -1,3 +1,22 @@
+/**
+ * CACHE BUSTING STRATEGY:
+ * VERSION: 1.0
+ * 
+ * To prevent browsers from caching outdated styles and scripts:
+ * - All CSS and JS files include ?v=1.0 parameter
+ * - Increment version number (e.g., ?v=1.1, ?v=2.0) after deploying CSS/JS changes
+ * - CDN files (Swiper, RemixIcon, Google Fonts) are versioned by CDN itself
+ * 
+ * BEST PRACTICES:
+ * 1. Increment version after each deployment
+ * 2. Use semantic versioning (major.minor)
+ * 3. Clear browser cache or do hard refresh (Ctrl+Shift+R) during development
+ * 4. Monitor for cached resources in DevTools Network tab
+ * 5. Consider setting Cache-Control headers on server:
+ *    - CSS/JS: Cache-Control: max-age=3600 (1 hour)
+ *    - HTML: Cache-Control: max-age=0, no-cache
+ */
+
 // change navbar style on scroll
 
 window.addEventListener("scroll", () => {
@@ -259,9 +278,9 @@ const I18N = {
     "contact.exec1.role": "المدير التنفيذي",
     "contact.exec2.title": "المدير العام",
     "contact.exec2.role": "المدير العام",
-    "contact.hours.days1": "الأحد - الخميس",
+    "contact.hours.days1": "السبت - الخميس",
     "contact.hours.days2": "الجمعة",
-    "contact.hours.days3": "السبت",
+    "contact.hours.days3": "الجمعة",
     "contact.hours.closed": "مغلق",
     "contact.firstName": "الاسم الأول",
     "contact.lastName": "اسم العائلة",
@@ -271,6 +290,7 @@ const I18N = {
     "contact.sending": "جارٍ الإرسال...",
     "contact.required": "يرجى ملء جميع الحقول المطلوبة",
     "contact.invalidEmail": "يرجى إدخال بريد إلكتروني صحيح",
+    "contact.mailtoOpened": "تم فتح تطبيق البريد الإلكتروني الافتراضي.",
     "contact.success": "تم إرسال رسالتك بنجاح",
     "contact.error": "تعذر إرسال الرسالة حالياً. يرجى المحاولة مرة أخرى بعد قليل.",
     "footer.quickLinks": "روابط سريعة",
@@ -534,9 +554,9 @@ const I18N = {
     "contact.exec1.role": "Executive Director",
     "contact.exec2.title": "General Manager",
     "contact.exec2.role": "General Manager",
-    "contact.hours.days1": "Sunday - Thursday",
+    "contact.hours.days1": "Saturday - Thursday",
     "contact.hours.days2": "Friday",
-    "contact.hours.days3": "Saturday",
+    "contact.hours.days3": "Friday",
     "contact.hours.closed": "Closed",
     "contact.firstName": "First name",
     "contact.lastName": "Last name",
@@ -546,6 +566,7 @@ const I18N = {
     "contact.sending": "Sending...",
     "contact.required": "Please fill in all required fields",
     "contact.invalidEmail": "Please enter a valid email address",
+    "contact.mailtoOpened": "Your default email app has been opened.",
     "contact.success": "Your message was sent successfully",
     "contact.error": "Message could not be sent right now. Please try again shortly.",
     "footer.quickLinks": "Quick Links",

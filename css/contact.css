@@ -1,11 +1,12 @@
 .contact_container {
   background: var(--color-bg1);
-  padding: 4rem;
+  padding: 2.5rem;
   display: grid;
   grid-template-columns: 40% 60%;
-  gap: 4rem;
+  align-items: center;
+  gap: 3rem;
   min-height: 30rem;
-  margin: 4rem auto;
+  margin: 2.5rem auto;
   border-radius: 1rem;
   box-shadow: var(--shadow-md);
 }
@@ -79,6 +80,7 @@
   display: flex;
   flex-direction: column;
   gap: 1.2rem;
+  align-self: center;
   margin-inline-start: 2rem;
 }
 .form_name {
@@ -140,7 +142,7 @@ textarea {
 
 /* Working Hours Section */
 .working-hours {
-  padding: 4rem 0;
+  padding: 3rem 0;
   background: linear-gradient(135deg, rgba(31, 95, 156, 0.1), rgba(243, 165, 90, 0.14));
 }
 
@@ -199,7 +201,7 @@ textarea {
 
 /* Executives Section */
 .executives-section {
-  padding: 4rem 0;
+  padding: 3rem 0;
   background: linear-gradient(180deg, #f3f8fc 0%, #ffffff 100%);
 }
 
