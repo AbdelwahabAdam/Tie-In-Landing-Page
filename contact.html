@@ -266,7 +266,13 @@
           last_name: lastName,
           from_email: email,
           message: message,
-          subject: [firstName, lastName].filter(Boolean).join(' ').trim()
+          subject: buildEmailSubject(firstName, lastName),
+          body: buildEmailBody({
+            firstName: firstName,
+            lastName: lastName,
+            email: email,
+            message: message
+          })
         };
 
         console.info('Contact form mailto started', {
@@ -340,9 +346,24 @@
         formDebug.textContent = text;
       }
 
+      function buildEmailSubject(firstName, lastName) {
+        const senderName = [firstName, lastName].filter(Boolean).join(' ').trim();
+        return senderName ? 'New contact message from ' + senderName : 'New contact message';
+      }
+
+      function buildEmailBody(data) {
+        return [
+          'Name: ' + [data.firstName, data.lastName].filter(Boolean).join(' ').trim(),
+          'Email: ' + data.email,
+          '',
+          'Message:',
+          data.message
+        ].join('\n');
+      }
+
       function openMailClient(data) {
         const subject = encodeURIComponent(data.subject || '');
-        const body = encodeURIComponent(data.message || '');
+        const body = encodeURIComponent(data.body || '');
         const mailtoLink = `mailto:${CONTACT_CONFIG.receiverEmail}?subject=${subject}&body=${body}`;
         const gmailComposeLink = `${CONTACT_CONFIG.gmailComposeBase}&to=${encodeURIComponent(CONTACT_CONFIG.receiverEmail)}&su=${subject}&body=${body}`;
 
