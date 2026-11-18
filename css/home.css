@@ -845,8 +845,8 @@ html[dir="ltr"] .home .scroll-progress span {
 
 .home .partner-grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 1.5rem;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1.25rem;
 }
 
 .home .partner-card {
@@ -870,18 +870,23 @@ html[dir="ltr"] .home .scroll-progress span {
   position: relative;
   display: grid;
   place-items: center;
-  height: 12rem;
-  padding: 1.75rem 2rem;
+  height: 10rem;
+  padding: 1.5rem 1.75rem;
   background:
     radial-gradient(circle at 50% 120%, rgba(31, 95, 156, 0.08), transparent 60%),
     var(--tint);
   border-bottom: 1px solid var(--line);
 }
 
+.home .partner-card_logo {
+  overflow: hidden;
+}
+
 .home .partner-card_logo img {
   width: auto;
+  height: auto;
   max-width: 78%;
-  max-height: 100%;
+  max-height: 6.75rem; /* box height (10rem) minus vertical padding */
   object-fit: contain;
   mix-blend-mode: multiply;
   transition: transform 0.5s var(--ease-out);
@@ -902,6 +907,82 @@ html[dir="ltr"] .home .scroll-progress span {
   font-size: 0.8rem;
   font-weight: 700;
   line-height: 1.6;
+}
+
+/* "جاري" / ongoing projects: green pill with a pulsing dot */
+.home .partner-card_year--live {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: var(--brand-secondary-strong);
+}
+
+.home .partner-card_year--live::before {
+  content: "";
+  width: 0.45rem;
+  height: 0.45rem;
+  border-radius: 50%;
+  background: #7dffb0;
+  box-shadow: 0 0 0 0 rgba(125, 255, 176, 0.7);
+  animation: livePulse 1.8s ease-out infinite;
+}
+
+@keyframes livePulse {
+  0% { box-shadow: 0 0 0 0 rgba(125, 255, 176, 0.7); }
+  80%, 100% { box-shadow: 0 0 0 7px rgba(125, 255, 176, 0); }
+}
+
+/* ISO commitments list in the About section */
+.home .iso-strip {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  max-width: 900px;
+  margin: calc(-1 * clamp(1rem, 2.5vw, 1.75rem)) auto clamp(2.5rem, 5vw, 3.25rem);
+  text-align: center;
+}
+
+.home .iso-strip_intro {
+  margin: 0;
+  font-family: "Cairo", sans-serif;
+  font-weight: 700;
+  color: var(--ink);
+}
+
+.home .iso-strip_list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.6rem;
+}
+
+.home .iso-strip_list li {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  border-radius: 999px;
+  background: var(--tint);
+  border: 1px solid var(--line);
+  color: var(--brand-primary-strong);
+  font-size: 0.92rem;
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+.home .iso-strip_list li::before {
+  content: "\eb7b"; /* remixicon: ri-check-line */
+  font-family: "remixicon";
+  display: grid;
+  place-items: center;
+  width: 1.35rem;
+  height: 1.35rem;
+  border-radius: 50%;
+  background: var(--brand-secondary);
+  color: #ffffff;
+  font-size: 0.85rem;
+  font-weight: 400;
 }
 
 .home .partner-card_body {
@@ -1654,6 +1735,63 @@ html[dir="ltr"] .home .why-choose-us_item {
   .home .service-grid,
   .home .why-choose-us_list {
     grid-template-columns: 1fr;
+  }
+
+  /* Compact horizontal partner cards so 8 cards don't make a very long page */
+  .home .partner-grid {
+    gap: 0.85rem;
+  }
+
+  .home .partner-card {
+    flex-direction: row;
+    align-items: stretch;
+  }
+
+  .home .partner-card_logo {
+    flex: 0 0 6.5rem;
+    height: auto;
+    min-height: 7.5rem;
+    padding: 0.85rem;
+    border-bottom: 0;
+    border-inline-end: 1px solid var(--line);
+  }
+
+  .home .partner-card_logo img {
+    max-width: 100%;
+    max-height: 4.25rem;
+  }
+
+  .home .partner-card_year {
+    position: static;
+    grid-row: 2;
+    margin-top: 0.5rem;
+    padding: 0.1rem 0.6rem;
+    font-size: 0.72rem;
+  }
+
+  .home .partner-card_body {
+    padding: 1rem 1.1rem;
+    gap: 0.35rem;
+  }
+
+  .home .partner-card_body h4 {
+    font-size: 1rem;
+  }
+
+  .home .partner-card_body p {
+    font-size: 0.88rem;
+    margin-bottom: 0.25rem;
+  }
+
+  .home .iso-strip_list {
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+  }
+
+  .home .iso-strip_list li {
+    border-radius: 0.9rem;
+    text-align: start;
   }
 
   .home .service-tile,
