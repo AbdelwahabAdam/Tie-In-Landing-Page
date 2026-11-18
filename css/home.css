@@ -845,8 +845,28 @@ html[dir="ltr"] .home .scroll-progress span {
 
 .home .partner-grid {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  /* 8 tracks, each card spans 2 => 4 per row, but lets an incomplete last row be centred */
+  grid-template-columns: repeat(8, minmax(0, 1fr));
   gap: 1.25rem;
+}
+
+.home .partner-grid > .partner-card {
+  grid-column: span 2;
+}
+
+/* last row holds 2 cards -> centre them */
+.home .partner-grid > .partner-card:nth-child(4n + 1):nth-last-child(2) {
+  grid-column: 3 / span 2;
+}
+
+/* last row holds 1 card -> centre it */
+.home .partner-grid > .partner-card:nth-child(4n + 1):last-child {
+  grid-column: 4 / span 2;
+}
+
+/* last row holds 3 cards -> centre them */
+.home .partner-grid > .partner-card:nth-child(4n + 1):nth-last-child(3) {
+  grid-column: 2 / span 2;
 }
 
 .home .partner-card {
@@ -1625,6 +1645,11 @@ html[dir="ltr"] .home .why-choose-us_item {
   .home .cert-grid,
   .home .partner-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .home .partner-grid > .partner-card,
+  .home .partner-grid > .partner-card:nth-child(n):nth-last-child(n) {
+    grid-column: auto;
   }
 
   .home .service-grid {
