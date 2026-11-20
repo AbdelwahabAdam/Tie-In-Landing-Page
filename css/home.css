@@ -1093,7 +1093,7 @@ html[dir="ltr"] .home .text-link:hover i {
 
 .home .service-grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 1.5rem;
 }
 
@@ -1656,7 +1656,7 @@ html[dir="ltr"] .home .why-choose-us_item {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  .home .service-tile:last-child {
+  .home .service-tile:last-child:nth-child(odd) {
     grid-column: 1 / -1;
     min-height: 20rem;
   }

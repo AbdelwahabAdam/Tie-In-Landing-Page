@@ -1089,6 +1089,16 @@ html[dir="ltr"] .footer_4 {
   box-shadow: 0 10px 24px rgba(31, 95, 156, 0.12);
 }
 
+.courses .course_image.course_image--pair img {
+  height: 15rem;
+}
+
+@media screen and (max-width: 600px) {
+  .courses .course_image.course_image--pair img {
+    height: 11rem;
+  }
+}
+
 .courses .course {
   display: flex;
   flex-direction: column;
